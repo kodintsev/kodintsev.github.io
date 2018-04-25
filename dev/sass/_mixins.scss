@@ -1,0 +1,90 @@
+%clr{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
+@mixin placeholder-color($color) {
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+// Convert mixins
+@mixin font_mix_family($family, $size:1.6, $weight:normal, $line_height:1.6, $col:#fff){
+  font-size:   ($size * 10) + px;
+  line-height: ($line_height * 10) + px;
+  font-size:   $size + rem;
+  line-height: $line_height + rem;
+  font-weight: $weight;
+  font-family: $family;
+  color: $col;
+}
+@mixin font_mix($size:1.6, $weight:normal, $line_height:1.6, $col:#fff){
+  font-size:   ($size * 10) + px;
+  line-height: ($line_height * 10) + px;
+  font-size:   $size + rem;
+  line-height: $line_height + rem;
+  font-weight: $weight;
+  color: $col;
+}
+// button
+@mixin button($width, $fontSize){
+  position: relative;
+  padding: 10px 15px;
+  width: $width;
+  border: none;
+  border-radius: 6px;
+  background-clip: border-box;
+  box-shadow: inset 0 -4px 0 #dc7322, inset 0 -5px 2px #fea741;
+  background-image: linear-gradient(bottom, #f58936 0%, #ffba4e 100%);
+  color: #fff;
+  text-shadow: 0 1px 1px #e67f29;
+  font-family: $font_family_button;
+  font-size: ($fontSize * 10) + px;
+  font-size: $fontSize + rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
+  transition: 0.2s ease-out;
+
+  &:hover{
+    background-image: linear-gradient(bottom, #f99643 0%, #ffba4e 100%);
+  }
+  &:active{
+    background-image: linear-gradient(bottom, #f58936 0%, #fba827 100%);
+  }
+}
+// input
+@mixin input_m{
+  width: 100%;
+  padding: 14.5px 20px;
+  border: 1px solid #d7d7d7;
+  border-radius: 6px;
+  background-clip: border-box;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  color: #8b8b8b;
+  font-family: $font_family_input;
+  font-size: 14px;
+  font-weight: 600;
+  @include placeholder-color(#8b8b8b);
+  appearance: none;
+  transition: 0.2s ease-out;
+
+  &:focus{
+    box-shadow: inset 0 0 10px rgba(0,0,0,.1);
+  }
+}

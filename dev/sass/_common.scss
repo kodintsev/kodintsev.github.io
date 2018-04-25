@@ -1,0 +1,111 @@
+// fonts
+@font-face {
+  font-family: 'Panton';
+  src: url('../fonts/Panton-Thin.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Panton-Thin.woff') format('woff'),
+  url('../fonts/Panton-Thin.ttf')  format('truetype'),
+  url('../fonts/Panton-Thin.svg#Panton-Thin') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panton';
+  src: url('../fonts/Panton-ThinItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Panton-ThinItalic.woff') format('woff'),
+  url('../fonts/Panton-ThinItalic.ttf')  format('truetype'),
+  url('../fonts/Panton-ThinItalic.svg#Panton-ThinItalic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+// END fonts
+
+// variables
+$width_max: 1920px;
+$width_min: 280px;
+
+$font_family_A: Arial, Helvetica, sans-serif ;
+$font_family_OS: 'Open Sans', sans-serif;
+$font_family_P: 'Panton';
+$font_family_input: $font_family_OS;
+$font_family_button: $font_family_OS;
+
+$name: animated;
+// END variables
+
+@include iphone{*{-webkit-text-size-adjust: none;}}
+button::-moz-focus-inner { padding: 0; border: 0 }
+input::-moz-focus-inner { border: 0; padding: 0;}
+input[type="submit"]::-moz-focus-inner { padding: 0; border: 0 }
+
+html{
+  font-size: 62.5%;
+  height: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+body{
+  font: {
+    family: $font_family_OS;
+    weight: normal;
+    size: 1.6rem;
+  }
+  height: 100%;
+  background-color: #fff;
+  color: #1e1e1e;
+}
+*{margin:0;padding:0;box-sizing: inherit;}
+// resets
+h1{
+  margin: 0; //normalize style reset
+}
+a, img, fieldset{
+  border:none;
+  outline:none;
+}
+input, textarea, button {
+  outline:none;
+}
+a:hover{
+  text-decoration: none;
+}
+.container{
+  min-width: $width_min;
+  max-width: $width_max;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 0 87px rgba(142,142,142,.22);
+  background-color: #fff;
+}
+.wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+.inner{
+  width: 96%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+select.error, textarea.error, input.error {
+  color: #e51414 !important;
+  @include placeholder-color(#e92d28 !important);
+  border-color: #e51414 !important;
+}
+input.file.error {
+  color: #e51414 !important;
+}
+.errors_block{
+  font-family: $font_family_input;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  background-color: #e51414;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+}
+.clearfix{
+  @extend %clr;
+}
