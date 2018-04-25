@@ -1,52 +1,3 @@
-<?php
-session_start();
-$utm_medium = 'Без utm_medium';
-$utm_source = 'Без utm_source';
-$utm_campaign = 'Без utm_campaign';
-$utm_term = 'Без utm_term';
-$utm_content = 'Без utm_content';
-
-if(isset($_GET['utm_medium'])){
-    $utm_medium = urldecode($_GET['utm_medium']);
-    $_SESSION['utm_medium'] = urldecode($_GET['utm_medium']);
-}elseif(isset($_SESSION['utm_medium'])) {
-    $utm_medium = $_SESSION['utm_medium'];
-} else{
-    $utm_medium = 'Без utm_medium';
-}
-if(isset($_GET['utm_source'])){
-    $utm_source = urldecode($_GET['utm_source']);
-    $_SESSION['utm_source'] = urldecode($_GET['utm_source']);
-}elseif(isset($_SESSION['utm_source'])) {
-    $utm_source = $_SESSION['utm_source'];
-} else{
-    $utm_source = 'Без utm_source';
-}
-if(isset($_GET['utm_campaign'])){
-    $utm_campaign = urldecode($_GET['utm_campaign']);
-    $_SESSION['utm_campaign'] = urldecode($_GET['utm_campaign']);
-}elseif(isset($_SESSION['utm_campaign'])) {
-    $utm_campaign = $_SESSION['utm_campaign'];
-} else{
-    $utm_campaign = 'Без utm_campaign';
-}
-if(isset($_GET['utm_term'])){
-    $utm_term = urldecode($_GET['utm_term']);
-    $_SESSION['utm_term'] = urldecode($_GET['utm_term']);
-}elseif(isset($_SESSION['utm_term'])) {
-    $utm_term = $_SESSION['utm_term'];
-} else{
-    $utm_term = 'Без utm_term';
-}
-if(isset($_GET['utm_content'])){
-    $utm_content = urldecode($_GET['utm_content']);
-    $_SESSION['utm_content'] = urldecode($_GET['utm_content']);
-}elseif(isset($_SESSION['utm_content'])) {
-    $utm_content = $_SESSION['utm_content'];
-} else{
-    $utm_content = 'Без utm_content';
-}
-?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -100,11 +51,6 @@ if(isset($_GET['utm_content'])){
                     <label class="form_label">
                         <input type="tel" name="number" maxlength="18" class="form_input" required value="" placeholder="Введите Ваш телефон"/>
                     </label>
-                    <input type="hidden" name="utm_medium" class="input_hid" value="<?php echo($utm_medium);?>" />
-                    <input type="hidden" name="utm_source" class="input_hid" value="<?php echo($utm_source);?>" />
-                    <input type="hidden" name="utm_campaign" class="input_hid" value="<?php echo($utm_campaign);?>" />
-                    <input type="hidden" name="utm_content" class="input_hid" value="<?php echo($utm_content);?>" />
-                    <input type="hidden" name="utm_term" class="input_hid" value="<?php echo($utm_term);?>" />
                     <input type="hidden" name="position" class="input_hid" value="Бесплатный осмотр" />
                     <input type="hidden" name="mail" class="input_hid" value="" />
                     <input type="submit" class="form_button btn" value="Бесплатный осмотр" />
@@ -147,11 +93,6 @@ if(isset($_GET['utm_content'])){
                     <label class="form_label">
                         <input type="tel" name="number" maxlength="18" class="form_input" required value="" placeholder="Введите Ваш телефон"/>
                     </label>
-                    <input type="hidden" name="utm_medium" class="input_hid" value="<?php echo($utm_medium);?>" />
-                    <input type="hidden" name="utm_source" class="input_hid" value="<?php echo($utm_source);?>" />
-                    <input type="hidden" name="utm_campaign" class="input_hid" value="<?php echo($utm_campaign);?>" />
-                    <input type="hidden" name="utm_content" class="input_hid" value="<?php echo($utm_content);?>" />
-                    <input type="hidden" name="utm_term" class="input_hid" value="<?php echo($utm_term);?>" />
                     <input type="hidden" name="position" class="input_hid" value="Узнайте все акции и скидки на имплантацию" />
                     <input type="hidden" name="mail" class="input_hid" value="" />
                     <button type="submit" class="form_button btn md">Получить скидку</button>
@@ -256,11 +197,6 @@ if(isset($_GET['utm_content'])){
                         <label class="form_label">
                             <textarea name="msg" class="form_textarea" required placeholder="Чем мы можем вам помочь?"></textarea>
                         </label>
-                        <input type="hidden" name="utm_medium" class="input_hid" value="<?php echo($utm_medium);?>" />
-                        <input type="hidden" name="utm_source" class="input_hid" value="<?php echo($utm_source);?>" />
-                        <input type="hidden" name="utm_campaign" class="input_hid" value="<?php echo($utm_campaign);?>" />
-                        <input type="hidden" name="utm_content" class="input_hid" value="<?php echo($utm_content);?>" />
-                        <input type="hidden" name="utm_term" class="input_hid" value="<?php echo($utm_term);?>" />
                         <input type="hidden" name="position" class="input_hid" value="Вопрос посетителя" />
                         <input type="hidden" name="mail" class="input_hid" value="" />
                         <button type="submit" class="form_button btn">Задать вопрос</button>
@@ -295,11 +231,6 @@ if(isset($_GET['utm_content'])){
         <label class="form_label">
             <input type="tel" name="number" maxlength="18" class="form_input" required value="" placeholder="Ваш телефон"/>
         </label>
-        <input type="hidden" name="utm_medium" class="input_hid" value="<?php echo($utm_medium);?>" />
-        <input type="hidden" name="utm_source" class="input_hid" value="<?php echo($utm_source);?>" />
-        <input type="hidden" name="utm_campaign" class="input_hid" value="<?php echo($utm_campaign);?>" />
-        <input type="hidden" name="utm_content" class="input_hid" value="<?php echo($utm_content);?>" />
-        <input type="hidden" name="utm_term" class="input_hid" value="<?php echo($utm_term);?>" />
         <input type="hidden" name="position" class="input_hid js_custom_position" value="" />
         <input type="hidden" name="mail" class="input_hid" value="" />
         <button type="submit" class="form_button btn js_custom_btn">Оставить заявку</button>
